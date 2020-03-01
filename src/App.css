@@ -8,11 +8,6 @@
   padding: 20px;
 }
 
-.header{
-  flex: 0 1 auto;
-  background-color: red;
-}
-
 .main{
   flex-grow: 1;
   background-color: white;
@@ -24,11 +19,6 @@
   height: 100%;
 }
 
-.footer{
-  flex: 0 1 auto;
-  background-color: hotpink;
-}
-
 .outerChatContainer{
   flex-grow: 1;
   margin-bottom: 50px;
@@ -38,4 +28,12 @@
   flex-grow: 1;
   overflow: auto;
   height: 80vh;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.innerChatBodyContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
