@@ -28,3 +28,14 @@
   flex: 0 1 auto;
   background-color: hotpink;
 }
+
+.outerChatContainer{
+  flex-grow: 1;
+  margin-bottom: 50px;
+}
+
+.chatBodyContainer{
+  flex-grow: 1;
+  overflow: auto;
+  height: 80vh;
+}
