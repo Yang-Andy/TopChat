@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import { Button, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+import ChatMessage from './ChatMessage';
 
 export default class ChatWindow extends React.Component {
     render() {
@@ -9,30 +10,26 @@ export default class ChatWindow extends React.Component {
                 <Card.Header>You are User1</Card.Header>
                 <Card.Body className={"chatBodyContainer"}>
                     <div className={"innerChatBodyContainer"}>
-                        <Card.Title>Special title treatment</Card.Title>
-                        <Card.Text>1</Card.Text>
-                        <Card.Text>2</Card.Text>
-                        <Card.Text>2</Card.Text>
-                        <Card.Text>1</Card.Text>
-                        <Card.Text>2</Card.Text>
-                        <Card.Text>1</Card.Text>
-                        <Card.Text>2</Card.Text>
-                        <Card.Text>1</Card.Text>
-                        <Card.Text>2</Card.Text>
-                        <Card.Text>1</Card.Text>
-                        <Card.Text>2</Card.Text>
-                        <Card.Text>1</Card.Text>
-                        <Card.Text>2</Card.Text>
-                        <Card.Text>1</Card.Text>
-                        <Card.Text>2</Card.Text>
-                        <Card.Text>1</Card.Text>
-                        <Card.Text>2</Card.Text>
-                        <Card.Text>1</Card.Text>
-                        <Card.Text>2</Card.Text>
-                        <Card.Text>1</Card.Text>
-                        <Card.Text>2</Card.Text>
-                        <Card.Text>2</Card.Text>
-
+                        <ChatMessage timestamp={"18:93"} nickname={"Brian"} nicknameColor={"blue"} message={"Hi"} />
+                        <ChatMessage timestamp={"18:98"} nickname={"Andy"} nicknameColor={"green"} message={"Hello World"} />
+                        <ChatMessage timestamp={"18:93"} nickname={"Brian"} nicknameColor={"blue"} message={"Hi"} />
+                        <ChatMessage timestamp={"18:98"} nickname={"Andy"} nicknameColor={"green"} message={"Hello World"} />
+                        <ChatMessage timestamp={"18:93"} nickname={"Brian"} nicknameColor={"blue"} message={"Hi"} />
+                        <ChatMessage timestamp={"18:98"} nickname={"Andy"} nicknameColor={"green"} message={"Hello World"} />
+                        <ChatMessage timestamp={"18:93"} nickname={"Brian"} nicknameColor={"blue"} message={"Hi"} />
+                        <ChatMessage timestamp={"18:98"} nickname={"Andy"} nicknameColor={"green"} message={"Hello World"} />
+                        <ChatMessage timestamp={"18:93"} nickname={"Brian"} nicknameColor={"blue"} message={"Hi"} />
+                        <ChatMessage timestamp={"18:98"} nickname={"Andy"} nicknameColor={"green"} message={"Hello World"} />
+                        <ChatMessage timestamp={"18:93"} nickname={"Brian"} nicknameColor={"blue"} message={"Hi"} />
+                        <ChatMessage timestamp={"18:98"} nickname={"Andy"} nicknameColor={"green"} message={"Hello World"} />
+                        <ChatMessage timestamp={"18:93"} nickname={"Brian"} nicknameColor={"blue"} message={"Hi"} />
+                        <ChatMessage timestamp={"18:98"} nickname={"Andy"} nicknameColor={"green"} message={"Hello World"} />
+                        <ChatMessage timestamp={"18:93"} nickname={"Brian"} nicknameColor={"blue"} message={"Hi"} />
+                        <ChatMessage timestamp={"18:98"} nickname={"Andy"} nicknameColor={"green"} message={"Hello World"} />
+                        <ChatMessage timestamp={"18:93"} nickname={"Brian"} nicknameColor={"blue"} message={"Hi"} />
+                        <ChatMessage timestamp={"18:98"} nickname={"Andy"} nicknameColor={"green"} message={"Hello World"} />
+                        <ChatMessage timestamp={"18:93"} nickname={"Brian"} nicknameColor={"blue"} message={"Hi"} />
+                        <ChatMessage timestamp={"18:98"} nickname={"Andy"} nicknameColor={"green"} message={"Hello World"} />
                     </div>
                 </Card.Body>
             </Card>

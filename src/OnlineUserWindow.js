@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Button, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 export default class OnlineUserWindow extends React.Component {
     render() {
