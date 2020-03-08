@@ -10,6 +10,9 @@ export default function BottomNavBar(props) {
             <FormControl
                 placeholder="Enter Message"
                 className="mr-sm-2"
+                value={props.value}
+                onChange={(event) => { props.valueChangeHandler(event.target.value) }}
+                onKeyPress={(event) => event.key === 'Enter' ? props.sendMessageHandler(event) : null}
             />
             <Button variant="secondary">
                 <FontAwesomeIcon icon={faPaperPlane} />
