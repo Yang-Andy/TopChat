@@ -26,6 +26,6 @@ const removeUser = (id) => {
     }
 }
 
-const getAllUsers = () => allUsers;
+const getAllUserNames = () => { return allUsers.map((user) => { return user.name }) };
 
-module.exports = { addUser, removeUser, getAllUsers, getUser };
+module.exports = { addUser, removeUser, getAllUserNames, getUser };

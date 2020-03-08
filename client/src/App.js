@@ -54,15 +54,14 @@ export default function App() {
     }
   }
 
-  console.log(message, messages, username)
 
   return (
     <div className={"wrapper"}>
       <TopNavBar />
       <div className={"main"}>
         <div className={"main2"}>
-          <ChatWindow username={username} />
-          <OnlineUserWindow />
+          <ChatWindow username={username} messages={messages} />
+          <OnlineUserWindow currentUsers={[]} />
         </div>
       </div>
       <BottomNavBar value={message} valueChangeHandler={(value) => { setMessage(value) }} sendMessageHandler={sendMessage} />

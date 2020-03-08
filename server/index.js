@@ -2,7 +2,7 @@ const express = require('express');
 const socketIO = require("socket.io");
 const http = require('http');
 const router = require('./router');
-const { addUser, removeUser, getAllUsers, getUser } = require("./users");
+const { addUser, removeUser, getAllUserNames, getUser } = require("./users");
 
 const PORT = process.env.PORT || 5000
 
@@ -17,7 +17,7 @@ io.on('connection', (socket) => {
 
         if (error) return callback(error);
 
-        //socket.emit('message', { user: 'admin', text: `$(user.name) has joined` })
+        socket.emit('message', { user: 'admin', text: 'userhasjoined' });
         socket.emit('sendUsername', name);
         socket.join("primary");
         callback();
@@ -30,7 +30,7 @@ io.on('connection', (socket) => {
     })
 
     socket.on('disconnect', () => {
-        console.log("User has left");
+        const user = removeUser(socket.id);
     })
 })
 
