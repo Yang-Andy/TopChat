@@ -15,7 +15,7 @@ export default function ChatWindow(props) {
                     {props.messages.map((message, i) => {
                         return (
                             <div key={i}>
-                                <ChatMessage timestamp={"18:93"} username={props.username} nicknameColor={"blue"} message={message} />
+                                <ChatMessage username={props.username} message={message} />
                             </div>
                         )
                     })}

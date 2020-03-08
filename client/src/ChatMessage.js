@@ -13,7 +13,7 @@ export default function ChatMessage(props) {
         ? (
             <div className="messageContainer justifyEnd">
                 <div>
-                    <p className="timeStampText pr-10 ">{"10:45"}</p>
+                    <p className="timeStampText pr-10 ">{props.message.timestamp}</p>
                     <p className="sentText pr-10 ">{props.username}</p>
                 </div>
                 <div className="messageBox backgroundBlue">
@@ -27,8 +27,8 @@ export default function ChatMessage(props) {
                     <p className="messageText colorDark">{props.message.text}</p>
                 </div>
                 <div>
-                    <p className="timeStampText pl-10 ">{"10:45"}</p>
-                    <p className="sentText pl-10 ">{props.message.text}</p>
+                    <p className="timeStampText pl-10 ">{props.message.timestamp}</p>
+                    <p className="sentText pl-10 ">{props.message.user}</p>
                 </div>
 
             </div>

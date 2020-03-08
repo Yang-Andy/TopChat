@@ -2,6 +2,7 @@ const express = require('express');
 const socketIO = require("socket.io");
 const http = require('http');
 const router = require('./router');
+const moment = require('moment');
 const { addUser, removeUser, getAllUserNames, getUser } = require("./users");
 
 const PORT = process.env.PORT || 5000
@@ -25,7 +26,8 @@ io.on('connection', (socket) => {
 
     socket.on('sendMessage', (message, callback) => {
         const user1 = getUser(socket.id);
-        io.to("primary").emit('message', { user: user1.name, text: message });
+        const timestamp = moment().format('h:mm a').toString();
+        io.to("primary").emit('message', { user: user1.name, text: message, timestamp: timestamp });
         callback();
     })
 
