@@ -18,7 +18,7 @@ io.on('connection', (socket) => {
         if (error) return callback(error);
 
         //socket.emit('message', { user: 'admin', text: `$(user.name) has joined` })
-
+        socket.emit('sendUsername', name);
         socket.join("primary");
         callback();
     });

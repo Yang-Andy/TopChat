@@ -15,9 +15,6 @@ const addUser = ({ id, name }) => {
 }
 
 const getUser = (id) => {
-    //console.log(id)
-    //console.log(allUsers.find((user) => { return (user.id === id) }));
-
     return allUsers.find((user) => { return (user.id === id) })
 };
 

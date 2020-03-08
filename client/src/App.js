@@ -11,6 +11,7 @@ let socket;
 export default function App() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const [username, setUserName] = useState("");
   const endpoint = 'localhost:5000'
 
 
@@ -24,6 +25,12 @@ export default function App() {
       socket.off();
     }
   }, [endpoint]);
+
+  useEffect(() => {
+    socket.on('sendUsername', (username) => {
+      setUserName(username);
+    })
+  }, [username]);
 
   useEffect(() => {
     socket.on('message', (message) => {
@@ -47,15 +54,14 @@ export default function App() {
     }
   }
 
-  console.log(message, messages)
-
+  console.log(message, messages, username)
 
   return (
     <div className={"wrapper"}>
       <TopNavBar />
       <div className={"main"}>
         <div className={"main2"}>
-          <ChatWindow />
+          <ChatWindow username={username} />
           <OnlineUserWindow />
         </div>
       </div>

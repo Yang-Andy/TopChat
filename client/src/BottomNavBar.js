@@ -14,7 +14,7 @@ export default function BottomNavBar(props) {
                 onChange={(event) => { props.valueChangeHandler(event.target.value) }}
                 onKeyPress={(event) => event.key === 'Enter' ? props.sendMessageHandler(event) : null}
             />
-            <Button variant="secondary">
+            <Button variant="secondary" onClick={(event) => { props.sendMessageHandler(event) }}>
                 <FontAwesomeIcon icon={faPaperPlane} />
             </Button>
         </Navbar>
