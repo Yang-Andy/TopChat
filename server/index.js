@@ -18,9 +18,9 @@ io.on('connection', (socket) => {
 
         if (error) return callback(error);
 
-        socket.emit('message', { user: 'admin', text: 'userhasjoined' });
         socket.emit('sendUsername', name);
         socket.join("primary");
+        io.to("primary").emit('sendAllUsers', getAllUserNames())
         callback();
     });
 
@@ -33,6 +33,8 @@ io.on('connection', (socket) => {
 
     socket.on('disconnect', () => {
         const user = removeUser(socket.id);
+        console.log(user);
+        io.to("primary").emit('sendAllUsers', getAllUserNames())
     })
 })
 

@@ -19,8 +19,7 @@ const getUser = (id) => {
 };
 
 const removeUser = (id) => {
-    const index = allUsers.findIndex((user) => { user.id === id })
-
+    const index = allUsers.findIndex((user) => { return user.id === id })
     if (index !== -1) {
         return allUsers.splice(index, 1)[0];
     }

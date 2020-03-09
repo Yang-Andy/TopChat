@@ -12,6 +12,7 @@ export default function App() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [username, setUserName] = useState("");
+  const [allUsers, setAllUsers] = useState([]);
   const endpoint = 'localhost:5000'
 
 
@@ -31,6 +32,12 @@ export default function App() {
       setUserName(username);
     })
   }, [username]);
+
+  useEffect(() => {
+    socket.on('sendAllUsers', (users) => {
+      setAllUsers(users);
+    })
+  }, [allUsers]);
 
   useEffect(() => {
     socket.on('message', (message) => {
@@ -54,14 +61,13 @@ export default function App() {
     }
   }
 
-
   return (
     <div className={"wrapper"}>
       <TopNavBar />
       <div className={"main"}>
         <div className={"main2"}>
           <ChatWindow username={username} messages={messages} />
-          <OnlineUserWindow currentUsers={[]} />
+          <OnlineUserWindow currentUsers={allUsers} />
         </div>
       </div>
       <BottomNavBar value={message} valueChangeHandler={(value) => { setMessage(value) }} sendMessageHandler={sendMessage} />
